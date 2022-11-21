@@ -47,3 +47,4 @@ php artisan serve
 ## Documentation
 
 -   [swagger 3.0](https://swagger.io/docs/specification/about/)
+-   [GitBook - API-ის დოკუმენტაცია, Swagger-ის ინტეგრაცია Laravel-ში](https://redberry.gitbook.io/resources/laravel/api-is-dokumentatsia-swagger-is-integratsia-laravel-shi)

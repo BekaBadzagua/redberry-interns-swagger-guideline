@@ -30,6 +30,12 @@ php artisan key:generate
 php artisan storage:link
 ```
 
+update .env configuration
+
+```sh
+php artisan migrate:fresh --seed
+```
+
 ```sh
 npm install
 ```

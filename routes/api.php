@@ -1,7 +1,6 @@
 <?php
 
-use App\Models\User;
-use Illuminate\Http\Request;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-	return $request->user();
-});
-
-Route::get('users', function () {
-	return response()->json(User::all(), 200);
+Route::group(['controller' => ProductController::class], function () {
+	Route::get('/products', 'index')->name('products.index');
+	Route::get('/products/{product}', 'get')->name('products.get');
+	Route::post('/products', 'store')->name('products.store');
+	Route::put('/products/{product}', 'update')->name('products.update');
+	Route::delete('/products/{product}', 'destroy')->name('products.destroy');
 });

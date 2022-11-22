@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('welcome');
 
-Route::view('/swagger', 'swagger')->name('swagger');
+Route::get('/swagger', fn () => App::isProduction() ? response(status:403) : view('swagger'))->name('swagger');
